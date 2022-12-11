@@ -12,7 +12,6 @@
     />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/style.css" />
     <title>Weather App</title>
   </head>
@@ -45,10 +44,7 @@
               <img src="" id="icon" class="float-left" /><strong
                 id="temperature"
               ></strong
-              ><small class="units"
-                ><a href="#" id="celsius" class="active">&deg C</a> |
-                <a href="#" id="farenheit">&deg F</a>
-              </small>
+              ><small class="units">°C </small>
             </div>
           </div>
           <div class="col-6">
@@ -58,26 +54,29 @@
             </ul>
           </div>
         </div>
+        <div class="weather-forecast" id="forecast"></div>
       </div>
       <footer>
-        <em>
-          This project was coded by Angelina Kravchenko and is
-          <a
-            href="https://github.com/Angie11111/vannila-weather-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            open-sourced on GitHub</a
-          >
-          and
-          <a
-            href="https://mellifluous-bublanina-b054b1.netlify.app/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            hosted on Netlify
-          </a>
-        </em>
+        <small>
+          <em>
+            This project was coded by Angelina Kravchenko and is
+            <a
+              href="https://github.com/Angie11111/vannila-weather-app"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              open-sourced on GitHub</a
+            >
+            and
+            <a
+              href="https://mellifluous-bublanina-b054b1.netlify.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              hosted on Netlify
+            </a>
+          </em>
+        </small>
       </footer>
     </div>
     <script src="src/app.js"></script>

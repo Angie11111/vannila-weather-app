@@ -8,6 +8,7 @@ function formatDate(timestamp) {
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
+
   let days = [
     "Sunday",
     "Monday",
@@ -24,16 +25,39 @@ function formatDate(timestamp) {
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
   return days[day];
+}
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let days = ["Thu", "Fri", "Sat", "Sun"];
+
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+      <div class="col-2">
+        <div class="weather-forecast-date">${day}</div>
+        <img
+          src="http://openweathermap.org/img/wn/50d@2x.png"
+          alt=""
+          width="42"
+        />
+        <div class="weather-forecast-temperatures">
+          <span class="weather-forecast-temperature-max"> 18° </span>
+          <span class="weather-forecast-temperature-min"> 12° </span>
+        </div>
+      </div>
+  `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+  console.log(forecastHTML);
 }
 
 function displayTemperature(response) {
@@ -73,35 +97,8 @@ function search(city) {
   axios.get(apiUrl).then(displayTemperature);
 }
 
-function displayFarenheitTemp(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-
-  celsius.classList.remove("active");
-  farenheit.classList.add("active");
-
-  let farenheitTemp = (celsiusTemp * 9) / 5 + 32;
-  temperatureElement.innerHTML = Math.round(farenheitTemp);
-}
-
-function displayCelsiusTemp(event) {
-  event.preventDefault();
-  celsius.classList.add("active");
-  farenheit.classList.remove("active");
-  let temperatureElement = document.querySelector("#temperature");
-
-  temperatureElement.innerHTML = Math.round(celsiusTemp);
-}
-
-let celsiusTemp = null;
-
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
-let farenheit = document.querySelector("#farenheit");
-farenheit.addEventListener("click", displayFarenheitTemp);
-
-let celsius = document.querySelector("#celsius");
-celsius.addEventListener("click", displayCelsiusTemp);
-
 search("Paris");
+displayForecast();

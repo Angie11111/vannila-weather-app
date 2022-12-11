@@ -1,10 +1,9 @@
 body {
-   font-family: "Roboto Mono", monospace;
+  font-family: "Roboto Mono", monospace;
   margin: 0 auto;
   padding: 20px;
   border: 1px solid #dadde1;
-  background-color:rgb(210, 242, 239)
-  max-width: 800px;
+  background-color: rgb(210, 242, 239);
 }
 
 .weather-app {
@@ -12,8 +11,11 @@ body {
   padding: 20px;
   border: 1px solid #dadde1;
   border-radius: 10px;
-  background: linear-gradient(68.6deg, rgb(252, 165, 241) 1.8%, rgb(181, 255, 255) 100.5%);
-  
+  background: linear-gradient(
+    68.6deg,
+    rgb(252, 165, 241) 1.8%,
+    rgb(181, 255, 255) 100.5%
+  );
 }
 
 h1 {
@@ -74,4 +76,23 @@ strong {
   position: relative;
   left: -10px;
   top: 10px;
+}
+
+.weather-forecast {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.weather-forecast-date {
+  font-size: 16px;
+  color: #000;
+  opacity: 0.5;
+}
+
+.weather-forecast-temperature-min {
+  opacity: 0.5;
+}
+
+.weather-forecast-temperatures {
+  font-size: 13px;
 }
