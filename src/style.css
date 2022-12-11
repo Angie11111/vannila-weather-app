@@ -27,15 +27,6 @@ h1 {
   margin-bottom: 0;
 }
 
-.weather-temp .active {
-  color: black;
-  cursor: default;
-  text-decoration: none;
-}
-.weather-temp .active:hover {
-  text-decoration: none;
-}
-
 .sourceCode {
   max-width: 600px;
 }
@@ -89,10 +80,10 @@ strong {
   opacity: 0.5;
 }
 
-.weather-forecast-temperature-min {
+.weather-forecast-temp-min {
   opacity: 0.5;
 }
 
-.weather-forecast-temperatures {
+.weather-forecast-temp {
   font-size: 13px;
 }
